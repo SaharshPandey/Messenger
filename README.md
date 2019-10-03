@@ -1,5 +1,5 @@
 
-##ChatApp
+# ChatApp #
 
 <br><b>ChatApp is a real time chat application made using Firebase...</b>
 
