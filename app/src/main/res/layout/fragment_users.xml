@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".Fragments.UsersFragment">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_10_dp"
+        android:layout_margin="10dp"
+        android:drawableLeft="@drawable/search_bg"
+        android:drawablePadding="5dp"
+        android:background="@drawable/edittext_bg"
+        android:textSize="16sp"
+        android:textColorHint="@color/grey"
+        android:textColor="@color/grey"
+        android:hint="Search user by name..."
+        android:id="@+id/search_users"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/search_users"
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- empty state -->
+    <include
+        android:id="@+id/es_layout"
+        android:visibility="gone"
+        layout="@layout/empty_state"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:alertDialogStyle">@style/CustomAlertDialogStyle</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/white</item>
+    </style>
+
+    <style name="MenuStyle" parent="Theme.AppCompat.Light">
+        <item name="android:background">@android:color/white</item>
+    </style>
+    <style name="DimDisabled" parent="Theme.AppCompat.Dialog">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:backgroundDimAmount">0</item>
+        <item name="android:dialogMessage">md</item>
+    </style>
+
+    <style name="CustomAlertDialogStyle">
+        <item name="android:bottomBright">@color/trans</item>
+        <item name="android:bottomDark">@color/trans</item>
+        <item name="android:bottomMedium">@color/trans</item>
+        <item name="android:centerBright">@color/trans</item>
+        <item name="android:centerDark">@color/trans</item>
+        <item name="android:centerMedium">@color/trans</item>
+        <item name="android:fullBright">@color/trans</item>
+        <item name="android:fullDark">@color/trans</item>
+        <item name="android:topBright">@color/trans</item>
+        <item name="android:topDark">@color/trans</item>
+    </style>
+
+</resources>

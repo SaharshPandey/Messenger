@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@+id/user_es"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:layout_marginBottom="50dp"
+        android:paddingLeft="@dimen/margin_20_dp"
+        android:paddingRight="@dimen/margin_20_dp">
+
+        <ImageView
+            android:id="@+id/es_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/es_image" />
+
+        <TextView
+            android:id="@+id/es_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/es_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_30_dp"
+            android:text="It's empty for now!"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size_16_sp" />
+
+        <TextView
+            android:id="@+id/es_descp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/es_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_10_dp"
+            android:gravity="center"
+            android:text="Once people start joining Chat app, you can view the list of those users here."
+            android:textColor="@color/black_shade"
+            android:textSize="@dimen/text_size_14_sp" />
+
+        <!--<TextView
+            android:id="@+id/es_button"
+            android:layout_width="@dimen/width_100_dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@id/es_descp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_20_dp"
+            android:background="@drawable/es_button_bg"
+            android:padding="@dimen/padding_10_dp"
+            android:text="Add Member"
+            android:textColor="@color/white" />-->
+
+    </RelativeLayout>
+
+</FrameLayout>

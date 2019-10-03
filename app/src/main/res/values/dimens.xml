@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_10_dp">10dp</dimen>
+    <dimen name="speech_bubble_corners">10dp</dimen>
+    <dimen name="speech_bubble_corners_plus_tail">15dp</dimen>
+    <dimen name="speech_bubble_spacing">5dp</dimen>
+    <dimen name="speech_bubble_tail">25dp</dimen>
+    <dimen name="margin_20_dp">20dp</dimen>
+    <dimen name="margin_30_dp">30dp</dimen>
+    <dimen name="text_size_16_sp">16sp</dimen>
+    <dimen name="margin_10_dp">10dp</dimen>
+    <dimen name="text_size_14_sp">14sp</dimen>
+</resources>
