@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ChatAppTutorial
 
 I have deleted google-services.json. Add yours
@@ -15,3 +16,7 @@ I have deleted google-services.json. Add yours
 <br>- in firebase Storage Rules, change value of "allow read, write:" from "if request.auth != null" to "if true;" (video 12) 
 <br>- For sending notification, paste your Firebase project key into your project APIService.java (video 18) 
 <br>- When you change database settings, you likely will need to uninstall and reinstall apps to avoid app crashes due to app caches.
+=======
+# ChatApp
+ChatApp is a real time chat application made using Firebase...
+>>>>>>> eb36216d553e2b8632e1fb83fceb9504eb8b9dbe
