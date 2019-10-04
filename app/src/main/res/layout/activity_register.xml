@@ -76,14 +76,19 @@
             android:hint="Password"/>
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Get Started"
+            android:paddingLeft="@dimen/padding_20_dp"
+            android:paddingRight="@dimen/padding_20_dp"
             android:id="@+id/btn_register"
+            android:drawablePadding="40dp"
             android:textAllCaps="false"
+            android:layout_gravity="left"
             android:textSize="18sp"
+            android:drawableRight="@drawable/ic_arrow_img"
             android:background="@drawable/button_bg"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:textColor="#fff"/>
 
 

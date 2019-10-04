@@ -66,14 +66,19 @@
             android:hint="Password"/>
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Login"
             android:textSize="18sp"
             android:textAllCaps="false"
             android:id="@+id/btn_login"
+            android:paddingLeft="@dimen/padding_20_dp"
+            android:paddingRight="@dimen/padding_20_dp"
+            android:drawablePadding="40dp"
+            android:layout_gravity="left"
+            android:drawableRight="@drawable/ic_arrow_img"
             android:background="@drawable/button_bg"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:textColor="#fff"/>
 
         <TextView
@@ -82,7 +87,7 @@
             android:gravity="center"
             android:text="Forgot your password?"
             android:layout_marginTop="10dp"
-            android:layout_gravity="end"
+            android:layout_gravity="start"
             android:textStyle="bold"
             android:id="@+id/forgot_password"
             android:textColor="@color/colorPrimaryDark"/>
