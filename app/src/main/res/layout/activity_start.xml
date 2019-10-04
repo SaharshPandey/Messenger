@@ -9,14 +9,31 @@
     android:layout_height="match_parent"
     tools:context=".StartActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:src="@drawable/ic_vector_chatapp"
+        android:scaleType="fitCenter"
+        />
+
     <TextView
         android:id="@+id/chat_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Real-time Chat "
+        android:textColor="#fff"
+        android:textSize="40sp"
+        />
+    <TextView
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chat Application"
+        android:text="by Saharsh.."
+        android:layout_gravity="right"
+        android:layout_marginRight="@dimen/margin_20_dp"
         android:textColor="#fff"
-        android:textSize="30sp"
-        android:textStyle="bold"/>
+        android:textSize="14sp"/>
 
     <Button
         android:layout_width="match_parent"
