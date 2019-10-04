@@ -27,33 +27,109 @@
                 android:textStyle="bold"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:id="@+id/profile_image"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="50dp"
                 android:src="@drawable/profile_img"/>
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_plus"
-                android:layout_marginTop="-25dp"
-                android:layout_marginLeft="-25dp"
+                android:layout_marginTop="-30dp"
+                android:layout_marginLeft="-30dp"
                 android:layout_toRightOf="@id/profile_image"
                 android:layout_below="@id/profile_image"
                 />
-            <TextView
+
+            <ImageView
+                android:id="@+id/edit_image"
+                android:src="@drawable/ic_edit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Username"
+                android:padding="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_below="@id/profile_image"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="15dp"
+                android:layout_alignParentRight="true" />
+
+            <TextView
+                android:id="@+id/name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:text="Name"
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/profile_image"
+                android:textColor="@color/grey"
+                android:layout_marginLeft="10dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:background="@null"
+                android:layout_toLeftOf="@id/edit_image"
+                android:enabled="false"
+                android:padding="@dimen/padding_10_dp"
+                android:layout_below="@id/name_tv"
                 android:textColor="@color/white"
                 android:textStyle="bold"
+                android:maxLines="1"
                 android:id="@+id/username"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:id="@+id/bio_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:text="Bio"
+                android:layout_below="@id/username"
+                android:textColor="@color/grey"
+                android:layout_marginLeft="10dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_margin="@dimen/margin_10_dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/bio_et"
+                android:enabled="false"
+                android:text=""
+                android:hint="Your bio can be of 60 words..."
+                android:maxLength="60"
+                android:minLines="4"
+                android:padding="@dimen/padding_10_dp"
+                android:maxLines="4"
+                android:gravity="top"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp"
+                android:background="@drawable/rounded_edittext"
+                android:layout_below="@id/bio_tv"
+                android:layout_centerHorizontal="true"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:id="@+id/save_btn"
+                android:visibility="gone"
+                android:textAllCaps="false"
+                android:layout_below="@id/bio_et"
+                android:layout_marginTop="@dimen/margin_30_dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/button_bg"
+                android:paddingLeft="@dimen/padding_50_dp"
+                android:paddingRight="@dimen/padding_50_dp"
+                android:paddingTop="@dimen/padding_10_dp"
+                android:paddingBottom="@dimen/padding_10_dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginBottom="@dimen/margin_20_dp"
+
+                />
+
 
         </RelativeLayout>
 

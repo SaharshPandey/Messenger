@@ -17,22 +17,41 @@
         android:gravity="center_horizontal"
         android:layout_below="@id/toolbar"
         android:padding="16dp"
+        android:layout_margin="@dimen/margin_20_dp"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_signup_vector"
+            android:layout_gravity="left"
+            />
         <TextView
             android:id="@+id/register_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create a new account"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:layout_gravity="left"
+            android:layout_marginTop="@dimen/margin_10_dp"
+            android:text="Welcome,"
+            android:textColor="@color/black"
+            android:textSize="36sp"/>
+
+        <TextView
+            android:id="@+id/msg_reg_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="register yourself to continue..."
+            android:layout_gravity="left"
+            android:textColor="@color/grey"
+            android:textSize="20sp"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/username"
             android:background="@drawable/edittext_bg"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             app:met_floatingLabel="normal"
             android:hint="Username"/>
 
@@ -42,7 +61,7 @@
             android:id="@+id/email"
             android:background="@drawable/edittext_bg"
             android:inputType="textEmailAddress"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             app:met_floatingLabel="normal"
             android:hint="Email"/>
 
@@ -52,19 +71,19 @@
             android:id="@+id/password"
             android:background="@drawable/edittext_bg"
             android:inputType="textPassword"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             app:met_floatingLabel="normal"
             android:hint="Password"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register"
+            android:text="Get Started"
             android:id="@+id/btn_register"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:background="@drawable/button_bg"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:textColor="#fff"/>
 
 

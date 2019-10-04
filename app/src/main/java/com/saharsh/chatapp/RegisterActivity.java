@@ -28,7 +28,7 @@ import java.util.HashMap;
 public class RegisterActivity extends AppCompatActivity {
 
     EditText username, email, password;
-    TextView register_tv;
+    TextView register_tv, msg_reg_tv;
     Button btn_register;
     Typeface MR, MRR;
     FirebaseAuth auth;
@@ -53,7 +53,9 @@ public class RegisterActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         btn_register = findViewById(R.id.btn_register);
         register_tv = findViewById(R.id.register_tv);
+        msg_reg_tv = findViewById(R.id.msg_reg_tv);
 
+        msg_reg_tv.setTypeface(MRR);
         username.setTypeface(MRR);
         email.setTypeface(MRR);
         password.setTypeface(MRR);
@@ -68,6 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String txt_username = username.getText().toString();
                 String txt_email = email.getText().toString();
                 String txt_password = password.getText().toString();
+                Utils.hideKeyboard(RegisterActivity.this);
 
                 if (TextUtils.isEmpty(txt_username) || TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)){
                     Toast.makeText(RegisterActivity.this, "All fileds are required", Toast.LENGTH_SHORT).show();

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:gravity="center"
+    android:gravity="top"
     android:orientation="vertical"
     android:background="@color/colorPrimary"
     android:layout_height="match_parent"
@@ -11,10 +11,10 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:src="@drawable/ic_vector_chatapp"
+        android:layout_height="300dp"
+        android:layout_gravity="top"
         android:scaleType="fitCenter"
-        />
+        android:src="@drawable/ic_vector_chatapp" />
 
     <TextView
         android:id="@+id/chat_title_tv"
@@ -31,9 +31,9 @@
         android:layout_height="wrap_content"
         android:text="by Saharsh.."
         android:layout_gravity="right"
-        android:layout_marginRight="@dimen/margin_20_dp"
-        android:textColor="#fff"
-        android:textSize="14sp"/>
+        android:layout_marginRight="80dp"
+        android:textColor="@color/grey"
+        android:textSize="12sp"/>
 
     <Button
         android:layout_width="match_parent"

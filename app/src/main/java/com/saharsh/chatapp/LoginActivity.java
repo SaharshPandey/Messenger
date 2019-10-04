@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     ProgressDialog dialog;
 
     FirebaseAuth auth;
-    TextView forgot_password, login_tv;
+    TextView forgot_password, login_tv, msg_tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +49,9 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         btn_login = findViewById(R.id.btn_login);
         forgot_password = findViewById(R.id.forgot_password);
+        msg_tv = findViewById(R.id.msg_tv);
 
-
+        msg_tv.setTypeface(MRR);
         login_tv.setTypeface(MR);
         email.setTypeface(MRR);
         password.setTypeface(MRR);
@@ -69,6 +70,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String txt_email = email.getText().toString();
                 String txt_password = password.getText().toString();
+
+                Utils.hideKeyboard(LoginActivity.this);
 
                 if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)){
                     Toast.makeText(LoginActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();

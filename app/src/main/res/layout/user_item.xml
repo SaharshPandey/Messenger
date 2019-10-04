@@ -83,8 +83,8 @@
 
     <ImageView
         android:id="@+id/arrow"
-        android:src="@drawable/ic_next"
-        android:layout_width="40dp"
+        android:src="@drawable/ic_chevron_right"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"

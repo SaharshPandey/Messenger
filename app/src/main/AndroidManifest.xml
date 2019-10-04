@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StartActivity">
+        <activity android:name=".StartActivity"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,14 +24,17 @@
         </activity>
         <activity
             android:name=".RegisterActivity"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
             android:parentActivityName=".StartActivity" />
         <activity android:name=".MainActivity" />
         <activity
             android:name=".LoginActivity"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
             android:parentActivityName=".StartActivity" />
         <activity android:name=".MessageActivity" />
         <activity
             android:name=".ResetPasswordActivity"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
             android:parentActivityName=".LoginActivity" />
 
         <service android:name=".Notifications.MyFirebaseIdService"

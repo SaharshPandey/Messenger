@@ -12,6 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,8 +47,10 @@ import static android.app.Activity.RESULT_OK;
 public class ProfileFragment extends Fragment {
 
     CircleImageView image_profile;
-    TextView username, profile_tv;
-
+    TextView profile_tv;
+    EditText username, bio_et;
+    ImageView edit_img;
+    Button save;
     DatabaseReference reference;
     FirebaseUser fuser;
     Typeface MR,MRR;
@@ -68,14 +73,72 @@ public class ProfileFragment extends Fragment {
         image_profile = view.findViewById(R.id.profile_image);
         username = view.findViewById(R.id.username);
         profile_tv = view.findViewById(R.id.profile_tv);
+        bio_et = view.findViewById(R.id.bio_et);
+        edit_img = view.findViewById(R.id.edit_image);
+        save = view.findViewById(R.id.save_btn);
+
 
         username.setTypeface(MR);
         profile_tv.setTypeface(MR);
+        bio_et.setTypeface(MRR);
+        save.setTypeface(MR);
 
         storageReference = FirebaseStorage.getInstance().getReference("uploads");
 
         fuser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users").child(fuser.getUid());
+
+        edit_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                save.setVisibility(View.VISIBLE);
+                username.setEnabled(true);
+                bio_et.setEnabled(true);
+                username.setSelection(username.getText().length());
+            }
+        });
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                username.setEnabled(false);
+                bio_et.setEnabled(false);
+
+
+                reference.child("bio").setValue(bio_et.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
+                         //   Toast.makeText(getContext(),"Profile Updated...", Toast.LENGTH_SHORT);
+                        }
+                        else{
+                         //   Toast.makeText(getContext(),"Unable to Save...", Toast.LENGTH_SHORT);
+
+                        }
+                    }
+                });
+
+
+
+                reference.child("username").setValue(username.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
+                            Toast.makeText(getContext(),"Profile Updated...", Toast.LENGTH_SHORT);
+                        }
+                        else{
+                            Toast.makeText(getContext(),"Unable to Save...", Toast.LENGTH_SHORT);
+
+                        }
+                    }
+                });
+
+                save.setVisibility(View.GONE);
+            }
+
+        });
+
+
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -83,6 +146,7 @@ public class ProfileFragment extends Fragment {
                 if(isAdded()){
                 User user = dataSnapshot.getValue(User.class);
                 username.setText(user.getUsername());
+                bio_et.setText(user.getBio());
                 if (user.getImageURL().equals("default")){
                     image_profile.setImageResource(R.drawable.profile_img);
                 } else {
