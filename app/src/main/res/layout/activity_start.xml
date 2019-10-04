@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="Real-time Chat "
+        android:text="Messenger"
         android:textColor="#fff"
         android:textSize="40sp"
         />
