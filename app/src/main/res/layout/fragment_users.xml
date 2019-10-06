@@ -15,6 +15,7 @@
         android:drawablePadding="5dp"
         android:background="@drawable/edittext_bg"
         android:textSize="16sp"
+        android:textCursorDrawable="@null"
         android:textColorHint="@color/grey"
         android:textColor="@color/grey"
         android:hint="Search user by name..."

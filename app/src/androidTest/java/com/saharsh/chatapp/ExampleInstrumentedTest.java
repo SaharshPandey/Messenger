@@ -1,4 +1,4 @@
-package com.koddev.chatapp;
+package com.saharsh.chatapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

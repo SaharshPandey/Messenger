@@ -24,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.saharsh.chatapp.Adapter.OnItemClick;
 import com.saharsh.chatapp.Adapter.UserAdapter;
 import com.saharsh.chatapp.Model.User;
 import com.saharsh.chatapp.R;
@@ -42,9 +43,18 @@ public class UsersFragment extends Fragment {
 
     private UserAdapter userAdapter;
     private List<User> mUsers;
+    static OnItemClick onItemClick;
 
     EditText search_users;
 
+    public static UsersFragment newInstance(OnItemClick click) {
+        onItemClick = click;
+        Bundle args = new Bundle();
+
+        UsersFragment fragment = new UsersFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -115,7 +125,7 @@ public class UsersFragment extends Fragment {
                     }
                 }
 
-                userAdapter = new UserAdapter(getContext(), mUsers, false);
+                userAdapter = new UserAdapter(getContext(),onItemClick, mUsers, false);
                 recyclerView.setAdapter(userAdapter);
             }
 
@@ -152,7 +162,7 @@ public class UsersFragment extends Fragment {
                         frameLayout.setVisibility(View.GONE);
                     }
 
-                    userAdapter = new UserAdapter(getContext(), mUsers, false);
+                    userAdapter = new UserAdapter(getContext(), onItemClick,mUsers, false);
                     recyclerView.setAdapter(userAdapter);
                 }
             }

@@ -1,4 +1,4 @@
-package com.koddev.chatapp;
+package com.saharsh.chatapp;
 
 import org.junit.Test;
 

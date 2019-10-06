@@ -1,4 +1,4 @@
-package com.koddev.chatapp.Notifications;
+package com.saharsh.chatapp.Notifications;
 
 import android.annotation.TargetApi;
 import android.app.Notification;

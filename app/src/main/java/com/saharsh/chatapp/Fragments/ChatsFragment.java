@@ -1,7 +1,6 @@
 package com.saharsh.chatapp.Fragments;
 
 import android.graphics.Typeface;
-import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -22,7 +21,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.saharsh.chatapp.Adapter.OnItemClick;
 import com.saharsh.chatapp.Adapter.UserAdapter;
+import com.saharsh.chatapp.MainActivity;
 import com.saharsh.chatapp.Model.Chatlist;
 import com.saharsh.chatapp.Model.User;
 import com.saharsh.chatapp.Notifications.Token;
@@ -46,7 +47,18 @@ public class ChatsFragment extends Fragment {
     DatabaseReference reference;
 
     private List<Chatlist> usersList;
+    static OnItemClick onItemClick;
 
+
+    public static ChatsFragment newInstance(OnItemClick click) {
+
+        onItemClick = click;
+        Bundle args = new Bundle();
+
+        ChatsFragment fragment = new ChatsFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -130,7 +142,7 @@ public class ChatsFragment extends Fragment {
                 }
 
 
-                userAdapter = new UserAdapter(getContext(), mUsers, true);
+                userAdapter = new UserAdapter(getContext(), onItemClick,mUsers, true);
                 recyclerView.setAdapter(userAdapter);
             }
 

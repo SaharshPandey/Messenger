@@ -28,6 +28,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.saharsh.chatapp.Adapter.OnItemClick;
 import com.saharsh.chatapp.Fragments.ChatsFragment;
 import com.saharsh.chatapp.Fragments.ProfileFragment;
 import com.saharsh.chatapp.Fragments.UsersFragment;
@@ -39,7 +40,7 @@ import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnItemClick {
 
     boolean doubleBackToExitPressedOnce = false;
     CircleImageView profile_image;
@@ -49,12 +50,14 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseUser firebaseUser;
     DatabaseReference reference;
+    OnItemClick onItemClick;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        this.onItemClick = this;
         MRR = Typeface.createFromAsset(getAssets(), "fonts/myriadregular.ttf");
         MR = Typeface.createFromAsset(getAssets(), "fonts/myriad.ttf");
 
@@ -116,12 +119,12 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (unread == 0){
-                    viewPagerAdapter.addFragment(new ChatsFragment(), "Chats");
+                    viewPagerAdapter.addFragment(ChatsFragment.newInstance(onItemClick), "Chats");
                 } else {
-                    viewPagerAdapter.addFragment(new ChatsFragment(), "("+unread+") Chats");
+                    viewPagerAdapter.addFragment(ChatsFragment.newInstance(onItemClick), "("+unread+") Chats");
                 }
 
-                viewPagerAdapter.addFragment(new UsersFragment(), "Users");
+                viewPagerAdapter.addFragment(UsersFragment.newInstance(onItemClick), "Users");
                 viewPagerAdapter.addFragment(new ProfileFragment(), "Profile");
 
                 viewPager.setAdapter(viewPagerAdapter);
@@ -160,6 +163,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return false;
+    }
+
+    @Override
+    public void onItemCLick(String uid, View view) {
+
+        ViewProfileActivity viewProfileActivity =
+                ViewProfileActivity.newInstance(uid,this);
+        viewProfileActivity.show(getSupportFragmentManager(),
+                "view_profile");
+
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {

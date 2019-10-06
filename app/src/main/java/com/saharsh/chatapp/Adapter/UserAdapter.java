@@ -1,9 +1,11 @@
 package com.saharsh.chatapp.Adapter;
 
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,10 +21,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.saharsh.chatapp.MainActivity;
 import com.saharsh.chatapp.MessageActivity;
 import com.saharsh.chatapp.Model.Chat;
 import com.saharsh.chatapp.Model.User;
 import com.saharsh.chatapp.R;
+import com.saharsh.chatapp.ViewProfileActivity;
 
 import java.util.List;
 
@@ -31,11 +35,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     private Context mContext;
     private List<User> mUsers;
     private boolean ischat;
+    private OnItemClick onItemClick;
 
     Typeface MR,MRR;
     String theLastMessage;
 
-    public UserAdapter(Context mContext, List<User> mUsers, boolean ischat){
+    public UserAdapter(Context mContext, OnItemClick onItemClick, List<User> mUsers, boolean ischat){
+        this.onItemClick = onItemClick;
         this.mUsers = mUsers;
         this.mContext = mContext;
         this.ischat = ischat;
@@ -93,6 +99,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
                 Intent intent = new Intent(mContext, MessageActivity.class);
                 intent.putExtra("userid", user.getId());
                 mContext.startActivity(intent);
+            }
+        });
+
+
+        holder.profile_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               onItemClick.onItemCLick(user.getId(),view);
             }
         });
     }
