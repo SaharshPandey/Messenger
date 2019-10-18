@@ -20,5 +20,18 @@ Add yours google-services.json
 <br>- When you change database settings, you likely will need to uninstall and reinstall apps to avoid app crashes due to app caches.
 
 
+<img src="https://user-images.githubusercontent.com/26492582/67112180-43018c80-f1f4-11e9-82c2-7c299e6d9cc1.png" width="300" height="600"/> 
+
+<img src="https://user-images.githubusercontent.com/26492582/67112181-439a2300-f1f4-11e9-9125-6fa64426e583.png" width="300" height="600"/>
+
+<img src="https://user-images.githubusercontent.com/26492582/67112187-4432b980-f1f4-11e9-94da-910e9e749702.png" width="300" height="600"/>
+
+<img src="https://user-images.githubusercontent.com/26492582/67112190-4563e680-f1f4-11e9-99a6-a0b455778454.png" width="300" height="600"/>
+
+<img src="https://user-images.githubusercontent.com/26492582/67112191-45fc7d00-f1f4-11e9-83a7-06da1a9b2457.png" width="300" height="600"/>
+
+<img src="https://user-images.githubusercontent.com/26492582/67112192-45fc7d00-f1f4-11e9-9dc6-f7a92db849da.png" width="300" height="600"/>
+
+<img src="https://user-images.githubusercontent.com/26492582/67112193-45fc7d00-f1f4-11e9-8350-2c42c320f73b.png" width="300" height="600"/>
 
 
