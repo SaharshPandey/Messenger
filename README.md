@@ -19,6 +19,7 @@ Add yours google-services.json
 <br>- For sending notification, paste your Firebase project key into your project APIService.java (video 18) 
 <br>- When you change database settings, you likely will need to uninstall and reinstall apps to avoid app crashes due to app caches.
 
+Check out the design...
 # Welcome, Login, Signup, Forgot Password
 <img src="https://user-images.githubusercontent.com/26492582/67112482-f7031780-f1f4-11e9-8264-4245187fbc8d.png" width="200" height="400"/>   <img src="https://user-images.githubusercontent.com/26492582/67112477-f7031780-f1f4-11e9-843e-43ef987ea1df.png" width="200" height="400"/>    <img src="https://user-images.githubusercontent.com/26492582/67112478-f7031780-f1f4-11e9-8beb-1daa94300ccb.png" width="200" height="400"/>    <img src="https://user-images.githubusercontent.com/26492582/67112474-f5d1ea80-f1f4-11e9-83ab-f89e4d55967e.png" width="200" height="400"/>  
 
