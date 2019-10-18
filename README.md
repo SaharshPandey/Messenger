@@ -1,7 +1,7 @@
 
 # ChatApp #
 
-<br><b>ChatApp is a real time chat application made using Firebase...</b>
+<br><b>ChatApp is a real time one to one chat application with Push Notifications made using Firebase...</b>
 
 Add yours google-services.json
 <br><b> Change Authorization:key with your key from firebase project</b>
